@@ -4,7 +4,7 @@ function Global() {
             <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-10 md:gap-16 rounded-xl p-6">
                 {/* Left content */}
                 <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-                    <h2 className="text-3xl sm:text-4xl font-semibold">
+                    <h2 className="text-3xl sm:text-5xl font-bold">
                         We're Global Partners of <span className="text-amber-600">100+ Institutes</span>
                     </h2>
                     <p className="my-6 text-base text-zinc-600 leading-relaxed">
@@ -20,7 +20,7 @@ function Global() {
                     <img
                         src="/images/mappoints.png"
                         alt="global"
-                        className="w-full max-w-md md:max-w-lg object-contain"
+                        className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain"
                     />
                 </div>
             </div>
