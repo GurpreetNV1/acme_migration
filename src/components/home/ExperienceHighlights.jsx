@@ -8,14 +8,14 @@ function ExperienceHighlights() {
 
     return (
         <div className="max-w-7xl mx-auto my-24 px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                 {highlights.map((item, index) => (
                     <div
                         key={index}
-                        className="flex items-center bg-gray-100 rounded-full shadow-sm overflow-hidden border-r-8 border-orange-500"
+                        className="flex items-center bg-gray-100 rounded-full shadow-sm overflow-hidden border-r-8 border-primary"
                     >
                         {/* Orange Icon Circle */}
-                        <div className="bg-orange-500 flex items-center justify-center w-18 h-18 rounded-full flex-shrink-0">
+                        <div className="bg-primary flex items-center justify-center w-18 h-18 rounded-full flex-shrink-0">
                             <i className={`${item.icon} text-white text-3xl`}></i>
                         </div>
 

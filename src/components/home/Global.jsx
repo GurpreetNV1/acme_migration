@@ -5,12 +5,12 @@ function Global() {
                 {/* Left content */}
                 <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
                     <h2 className="text-3xl sm:text-5xl font-bold">
-                        We're Global Partners of <span className="text-amber-600">100+ Institutes</span>
+                        We're Global Partners of <span className="text-primary">100+ Institutes</span>
                     </h2>
                     <p className="my-6 text-base text-zinc-600 leading-relaxed text-justify">
                         Discover the world of education through our extensive global network, as we proudly stand as a trusted partner of 100+ educational institutes. Unlock a multitude of academic opportunities and access top-notch institutions around the globe.
                     </p>
-                    <button className="inline-flex items-center justify-center py-3 px-6 bg-amber-600 hover:bg-amber-700 transition-colors text-white rounded-lg font-medium gap-2">
+                    <button className="inline-flex items-center justify-center py-3 px-6 bg-primary hover:bg-primary transition-colors text-white rounded-lg font-medium gap-2">
                         More
                     </button>
                 </div>
