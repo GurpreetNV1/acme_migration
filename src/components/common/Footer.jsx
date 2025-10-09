@@ -57,11 +57,11 @@ function Footer() {
 
             <div className="flex flex-col min-w-[150px]">
               <p className="font-semibold text-lg mb-2">Our Branches</p>
-              <span className="mb-1">Australia</span>
+              <span className="mb-1 font-bold">Australia</span>
               <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Melbourne</a>
               <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Dandenong</a>
               <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Perth</a>
-              <span className="mt-2 mb-1">India</span>
+              <span className="mt-2 mb-1 font-bold">India</span>
               <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Amritsar</a>
               <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Ahmedabad</a>
               <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Vadodra</a>
