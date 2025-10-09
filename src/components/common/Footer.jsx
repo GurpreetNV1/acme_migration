@@ -66,6 +66,15 @@ function Footer() {
               <a href="#" className="hover:text-primary transition-colors mb-1">Ahmedabad</a>
               <a href="#" className="hover:text-primary transition-colors mb-1">Vadodra</a>
               <a href="#" className="hover:text-primary transition-colors mb-1">A/bad Gota</a>
+              <span className="mb-1 font-bold">Australia</span>
+              <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Melbourne</a>
+              <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Dandenong</a>
+              <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Perth</a>
+              <span className="mt-2 mb-1 font-bold">India</span>
+              <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Amritsar</a>
+              <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Ahmedabad</a>
+              <a href="#" className="hover:text-yellow-500 transition-colors mb-1">Vadodra</a>
+              <a href="#" className="hover:text-yellow-500 transition-colors mb-1">A/bad Gota</a>
             </div>
 
             <div className="flex flex-col min-w-[150px]">
