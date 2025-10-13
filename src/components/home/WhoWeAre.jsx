@@ -11,7 +11,7 @@ function Whoweare() {
                         We are experienced migration agents and education counselors with expertise in Australian migration laws and policies. Our friendly and strategic team provides a full range of services, from helping students get into the best universities to obtaining permanent residency. We have access to some of the best educational institutions in Australia. With a client-centric approach, our experienced migration agents and education counselors are dedicated to understanding your unique needs and aspirations, guiding you towards a successful future in Australia.
                         We provide all Australian immigration law services including appeals of citizenship refusals. Our ethical services aim to help you build a better future.
                     </p>
-                    <button className="inline-flex items-center justify-center py-3 px-6 text-primary hover:text-primary transition-colors text-white rounded-lg font-medium gap-2">
+                    <button className="inline-flex items-center justify-center py-3 px-6 bg-primary  transition-colors text-white rounded-lg font-medium gap-2">
                         Read More
                     </button>
                 </div>

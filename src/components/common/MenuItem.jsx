@@ -4,25 +4,20 @@ import { ChevronRight, ChevronDown } from "lucide-react";
 
 const MenuItem = ({ item, isSubMenu = false, level = 0 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openLeft, setOpenLeft] = useState(false); // control direction
-  const timeoutRef = useRef(null);
+  const [openLeft, setOpenLeft] = useState(false); // for direction
   const dropdownRef = useRef(null);
   const directionLocked = useRef(false); // prevent re-checking while open
 
-  useEffect(() => {
-    return () => clearTimeout(timeoutRef.current);
-  }, []);
 
   const handleMouseEnter = () => {
-    clearTimeout(timeoutRef.current);
     setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setIsOpen(false), 50);
+    setIsOpen(false);
   };
 
-  // 🧠 Detect screen edges once per open, lock direction until closed
+  // Detect screen edges once per open, lock direction until closed
   useEffect(() => {
     if (isOpen && dropdownRef.current && !directionLocked.current) {
       const rect = dropdownRef.current.getBoundingClientRect();
@@ -34,7 +29,7 @@ const MenuItem = ({ item, isSubMenu = false, level = 0 }) => {
         setOpenLeft(false);
       }
 
-      directionLocked.current = true; 
+      directionLocked.current = true;
     }
 
     if (!isOpen) {
@@ -55,13 +50,13 @@ const MenuItem = ({ item, isSubMenu = false, level = 0 }) => {
 
   // Menu link styles
   const linkClasses = isSubMenu
-    ? "block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary transition-all duration-200 whitespace-normal break-words"
-    : "block px-1 py-2 text-base font-medium text-gray-800 hover:text-primary transition-colors duration-200 whitespace-normal break-words";
+    ? "block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-primary transition-all whitespace-normal break-words"
+    : "block px-1 py-2 text-base font-medium text-gray-800 hover:text-primary transition-colors whitespace-normal break-words";
 
   // Dropdown styles + animation
   const dropdownClasses = `
     bg-white border border-gray-200 shadow-xl rounded-lg z-50 
-    w-[250px] py-2 transition-all duration-200 transform origin-top
+    w-[250px] py-2 transition-all transform origin-top
     ${isOpen ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"}
   `;
 
@@ -110,7 +105,10 @@ const MenuItem = ({ item, isSubMenu = false, level = 0 }) => {
 
       {/* Dropdown content */}
       {hasSubItems && (
-        <div ref={dropdownRef} className={`${dropdownClasses} ${positionClass}`}>
+        <div
+          ref={dropdownRef}
+          className={`${dropdownClasses} ${positionClass}`}
+        >
           {Object.entries(item.subItems).map(([subLabel, subItem]) => {
             const isExternal = /^(https?:)?\/\//i.test(subItem);
             const subItemData =
