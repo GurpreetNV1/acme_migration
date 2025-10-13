@@ -63,6 +63,7 @@ const router = createBrowserRouter([
         path: "about",
         element: <About />,
       },
+      // Migration
       {
         path: "temporary-graduate-visa-subclass-485",
         element: <TemporaryGraduateVisa />,
@@ -87,6 +88,7 @@ const router = createBrowserRouter([
         path: "skilled-work-regional-provisional-visa-subclass-491",
         element: <SkilledWorkRegionalVisa />,
       },
+      // Study Overseas
       {
         path: "study-in-australia",
         element: <AustraliaBasics />,
@@ -204,6 +206,7 @@ const router = createBrowserRouter([
         path: "uk-student-visa-process",
         element: <UKStudentVisaProcess />,
       },
+      // Visitor Visa
       {
         path: "family-sponsored-visa",
         element: <FamilySponsoredVisa />,
@@ -212,6 +215,7 @@ const router = createBrowserRouter([
         path: "work-and-holiday-visa-subclass-462-417",
         element: <WorkAndHolidayVisaSC462And417 />,
       },
+      // Other
       {
         path: "business-visa",
         element: <BusinessVisa />,

@@ -15,3 +15,6 @@ h6 {
 @theme {
   --color-primary: #e17100;
 }
+html, body {
+  overflow-x: hidden;
+}
