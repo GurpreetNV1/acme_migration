@@ -18,7 +18,8 @@ function Ethics() {
                         Ethics and Execution Always Our Priority
                     </h2>
                 </div>
-
+ 
+ 
                 {/* Right Button Section */}
                 <div className="w-full lg:w-[15%] flex justify-center items-center mt-6 lg:mt-0">
                     <button className="text-white py-3 px-8 sm:py-4 sm:px-10 border border-white rounded-md hover:bg-white hover:text-black transition">
