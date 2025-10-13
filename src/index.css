@@ -14,6 +14,13 @@ h6 {
 }
 @theme {
   --color-primary: #e17100;
+  --color-accent: #2C5480;
+  --color-sidebar-bg: #0d1117;
+  --color-sidebar-level-1: #161b22;
+  --color-sidebar-level-2: #1c2128;
+  --color-border: #30363d;
+  --color-hover-orange: #ff8c00;
+  --color-hover-blue: #2C5480;
 }
 html, body {
   overflow-x: hidden;

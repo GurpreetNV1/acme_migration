@@ -1,5 +1,10 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { BsChatLeftTextFill } from "react-icons/bs";
+import { LuMenu } from "react-icons/lu";
+import { X } from "lucide-react";
 import MenuItem from "./MenuItem";
+import MobileMenuItem from "./MobileMenuItem";
 
 const menuItems = [
   { label: "Home", url: "/" },
@@ -92,37 +97,115 @@ const menuItems = [
 ];
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  // Scroll Lock for mobile menu
+  useEffect(() => {
+    document.documentElement.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
+    return () => {
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [isMobileMenuOpen]);
+
+  const handleNavigate = (url) => {
+    navigate(url);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <nav className=" fixed top-0 left-0 w-full z-[100]  px-4 py-1 bg-white/50 backdrop-blur-xl">
-      <div className="flex mx-auto justify-between max-w-[1280px] items-center">
-        {/* Logo */}
-        <div className="max-w-[180px] min-w-[180px] w-full">
-          <img
-            src="/images/acme-header-logo.png"
-            alt="acme_logo"
-            className="w-full h-auto"
-          />
+    <>
+    {/* Desktop View */}
+      <nav className="hidden lg:block fixed top-0 left-0 w-full z-[100] px-4 py-4 bg-white/50 backdrop-blur-xl shadow-sm">
+        <div className="flex mx-auto justify-between max-w-[1280px] items-center">
+          {/* Logo */}
+          <div className="max-w-[180px] min-w-[180px] w-full">
+            <img
+              src="/images/acme-header-logo.png"
+              alt="acme_logo"
+              className="w-full h-auto"
+              onClick={()=>navigate("/")}
+            />
+          </div>
+
+          {/* Nav Items */}
+          <div className="flex items-center gap-6 text-gray-800">
+            {menuItems.map((item, index) => (
+              <MenuItem key={index} item={item} />
+            ))}
+          </div>
+
+          {/* Contact Info */}
+          <div className="w-[200px] flex justify-end items-center cursor-pointer hover:opacity-80 transition-opacity">
+            <div className="size-[30px] flex items-center justify-center">
+              <BsChatLeftTextFill className="size-[20px] text-[#e17100]" />
+            </div>
+            <div className="flex flex-col ml-3">
+              <p className="text-sm font-semibold text-gray-800">Contact Us</p>
+              <p className="text-sm text-[#e17100] font-medium">+61 479171282</p>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile View*/}
+      <nav className="lg:hidden w-full fixed top-0 bg-white/80 backdrop-blur-xl left-0 py-4 z-40 px-4 border-b border-gray-200">
+        <div className="flex items-center justify-between">
+          <div className="max-w-[180px] min-w-[180px] w-full">
+            <img
+              src="/images/acme-header-logo.png"
+              alt="acme_logo"
+              className="w-full h-auto"
+              onClick={()=>navigate("/")}
+            />
+          </div>
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="p-2 hover:bg-orange-50 rounded-lg transition-colors"
+          >
+            <LuMenu className="w-6 h-6 text-[#000000]" />
+          </button>
+        </div>
+      </nav>
+
+      {/* Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-30 transition-opacity duration-300"
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
+      )}
+
+      {/* Sidebar Menu */}
+      <div
+        className={`fixed top-0 right-0 w-[85%] max-w-[380px] h-screen bg-[#0d1117] z-40 shadow-2xl transform transition-transform duration-300 ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Header */}
+        <div className="sticky top-0 bg-[#0d1117] backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-[#30363d]">
+          <h2 className="text-white font-bold text-lg">Menu</h2>
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="p-2 hover:bg-[#ff8c00]/20 rounded-lg transition-colors"
+          >
+            <X className="w-6 h-6 text-[#ffffff]" />
+          </button>
         </div>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-2 text-gray-800">
+        {/* Menu Items */}
+        <div className="pt-2 pb-8 overflow-y-auto max-h-[calc(100vh-80px)]">
           {menuItems.map((item, index) => (
-            <MenuItem key={index} item={item} />
+            <MobileMenuItem
+              key={index}
+              item={item}
+              depth={0}
+              onNavigate={handleNavigate}
+            />
           ))}
         </div>
-
-        {/* Contact Info */}
-        <div className="w-[200px] flex justify-end items-center cursor-pointer hover:opacity-80 transition-opacity">
-          <div className="size-[30px] flex items-center justify-center">
-            <BsChatLeftTextFill className="size-[18px] md:size-[25px] text-primary" />
-          </div>
-          <div className="flex flex-col ml-3">
-            <p className="text-sm font-semibold text-gray-800">Contact Us</p>
-            <p className="text-sm text-primary font-medium">+61 479171282</p>
-          </div>
-        </div>
       </div>
-    </nav>
+    </>
   );
 };
 

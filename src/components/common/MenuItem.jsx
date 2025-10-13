@@ -97,12 +97,12 @@ const MenuItem = ({ item, isSubMenu = false, level = 0 }) => {
             {hasSubItems &&
               (isSubMenu ? (
                 <ChevronRight
-                  className={`w-4 h-4 ml-2 opacity-50 transition-transform ${
+                  className={`w-4 h-4 opacity-50 transition-transform ${
                     openLeft ? "rotate-180" : ""
                   }`}
                 />
               ) : (
-                <ChevronDown className="w-4 h-4 ml-1 opacity-50" />
+                <ChevronDown className="w-4 h-4 opacity-50" />
               ))}
           </div>
         </span>
