@@ -5,7 +5,7 @@ import { LuMenu } from "react-icons/lu";
 import { X } from "lucide-react";
 import MenuItem from "./MenuItem";
 import MobileMenuItem from "./MobileMenuItem";
-
+import { MdCall } from "react-icons/md";
 const menuItems = [
   { label: "Home", url: "/" },
   {
@@ -142,8 +142,10 @@ const Navbar = () => {
               <BsChatLeftTextFill className="size-[20px] text-[#e17100]" />
             </div>
             <div className="flex flex-col ml-3">
+              <div onClick={()=>navigate('/contact')}>
               <p className="text-sm font-semibold text-gray-800">Contact Us</p>
               <p className="text-sm text-[#e17100] font-medium">+61 479171282</p>
+              </div>
             </div>
           </div>
         </div>
@@ -152,7 +154,7 @@ const Navbar = () => {
       {/* Mobile View*/}
       <nav className="lg:hidden w-full fixed top-0 bg-white/80 backdrop-blur-xl left-0 py-4 z-40 px-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
-          <div className="max-w-[180px] min-w-[180px] w-full">
+          <div className="max-w-[130px] min-w-[130px] w-full">
             <img
               src="/images/acme-header-logo.png"
               alt="acme_logo"
@@ -160,12 +162,21 @@ const Navbar = () => {
               onClick={()=>navigate("/")}
             />
           </div>
+          <div>
+          
+          <button
+            onClick={() => navigate('/contact')}
+            className="p-2 hover:bg-orange-50 rounded-lg transition-colors"
+          >
+            <MdCall className="w-6 h-6 text-primary" />
+          </button>
           <button
             onClick={() => setIsMobileMenuOpen(true)}
             className="p-2 hover:bg-orange-50 rounded-lg transition-colors"
           >
             <LuMenu className="w-6 h-6 text-[#000000]" />
           </button>
+          </div>
         </div>
       </nav>
 
