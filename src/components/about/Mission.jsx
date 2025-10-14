@@ -5,7 +5,7 @@ function Mission() {
         
         {/* Left Section - Text */}
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-900 mb-6">
             Our Mission
           </h2>
           <p className="text-gray-600 leading-relaxed mb-6 text-justify text-sm sm:text-base">
