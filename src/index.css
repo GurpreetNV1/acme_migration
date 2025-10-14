@@ -14,6 +14,7 @@ h6 {
 }
 @theme {
   --color-primary: #e17100;
+  --color-primary-loading: #e170005b;
   --color-accent: #2C5480;
   --color-sidebar-bg: #0d1117;
   --color-sidebar-level-1: #161b22;
