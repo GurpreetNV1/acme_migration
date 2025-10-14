@@ -58,14 +58,13 @@ function ContactForm() {
       return;
     }
 
-    const formattedPhone = formatPhoneNumber(countryCode, cleanPhone);
-
     try {
       setLoading(true);
       const res = await api.post("/send-email", {
         name,
         email,
-        phone: formattedPhone,
+        phone: cleanPhone,
+        countryCode,
         service,
         message,
       });
