@@ -138,13 +138,11 @@ const Navbar = () => {
 
           {/* Contact Info */}
           <div className="w-[200px] flex justify-end items-center cursor-pointer hover:opacity-80 transition-opacity">
-            <div className="size-[30px] flex items-center justify-center">
-              <BsChatLeftTextFill className="size-[20px] text-[#e17100]" />
-            </div>
             <div className="flex flex-col ml-3">
               <div onClick={()=>navigate('/contact')}>
-              <p className="text-sm font-semibold text-gray-800">Contact Us</p>
-              <p className="text-sm text-[#e17100] font-medium">+61 479171282</p>
+              <button className="bg-primary hover:cursor-pointer text-white px-5 py-3 rounded-xl">
+                Contact Us
+              </button>
               </div>
             </div>
           </div>

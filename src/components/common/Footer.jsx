@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="w-full">
@@ -47,8 +48,8 @@ function Footer() {
             
             <div className="flex flex-col min-w-[150px]">
               <p className="font-bold text-lg mb-2">Quick Links</p>
-              <a href="#" className="hover:text-primary transition-colors mb-1">Home</a>
-              <a href="#" className="hover:text-primary transition-colors mb-1">About Us</a>
+              <Link to="/" className="hover:text-primary transition-colors mb-1">Home</Link>
+              <Link to="/about" className="hover:text-primary transition-colors mb-1">About Us</Link>
               <a href="#" className="hover:text-primary transition-colors mb-1">Australia</a>
               <a href="#" className="hover:text-primary transition-colors mb-1">Canada</a>
               <a href="#" className="hover:text-primary transition-colors mb-1">New Zealand</a>
