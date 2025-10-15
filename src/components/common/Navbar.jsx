@@ -137,10 +137,10 @@ const Navbar = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="w-[200px] flex justify-end items-center cursor-pointer hover:opacity-80 transition-opacity">
+          <div className="flex justify-end items-center cursor-pointer transition-opacity">
             <div className="flex flex-col ml-3">
               <div onClick={()=>navigate('/contact')}>
-              <button className="bg-primary hover:cursor-pointer text-white px-5 py-3 rounded-xl">
+              <button className="bg-primary hover:cursor-pointer hover:opacity-80  text-white px-5 py-3 rounded-xl">
                 Contact Us
               </button>
               </div>
